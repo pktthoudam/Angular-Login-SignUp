@@ -1,0 +1,62 @@
+<nav class="navbar navbar-expand-xl navbar-dark bg-dark ;navbar sticky-top navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand">My Blogs</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarDark"
+      aria-controls="navbarDark" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse show" id="navbarDark">
+      <ul class="navbar-nav me-auto mb-2 mb-xl-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/dashboard">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/member-list">Member List</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/photos">Photos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/about">About Us</a>
+        </li>
+
+      </ul>
+      <!-- <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-light" type="submit">Search</button>
+          </form> -->
+      <button type="button" class="btn btn-info" routerLink="/log-in">Log Out</button>
+    </div>
+  </div>
+</nav>
+<div class="container">
+  <h1 class="text-center">List of all Member</h1>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>User Name</th>
+        <th>Email</th>
+        <th>Password</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of Userlist">
+        <td>{{user.id}}</td>
+        <td>{{user.fname}}</td>
+        <td>{{user.lname}}</td>
+        <td>{{user.username}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.password}}</td>
+        <td>
+          <button type="button" class="btn btn-primary" (click)="edit(user.id)">Update</button>
+          <button type="button" class="btn btn-danger" (click)="delete(user.id)">Delete</button>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>

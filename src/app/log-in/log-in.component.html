@@ -1,0 +1,23 @@
+
+<div class="container" class="text-center">
+  <h1> Please Log In</h1>
+  <h5>Feel free to Login</h5>
+</div>
+<hr>
+<div class="container">
+  <form [formGroup]="loginForm" (ngSubmit)="logIn()">
+    <div class="mb-3">
+      <label for="username" class="form-label">User Name</label>
+      <input type="text" class="form-control" formControlName="username">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" formControlName="password">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Login</button>
+  </form>
+  <a routerLink="/sign-up">New User ? Click to Signup !</a>
+
+</div>
+<hr>

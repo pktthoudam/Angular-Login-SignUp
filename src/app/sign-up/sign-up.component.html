@@ -1,0 +1,37 @@
+
+<div class="container" class="text-center">
+    <h1> Please Sign Up</h1>
+    <h5>Feel free to be a Member</h5>
+</div>
+<hr>
+<div class="container">
+    <form [formGroup]="SignForm"  >
+        <div class="mb-3">
+            <label for="fname" class="form-label">First Name</label>
+            <input type="text" class="form-control" formControlName="fname" >
+        </div>
+        <div class="mb-3">
+            <label for="lname" class="form-label">Last Name</label>
+            <input type="text" class="form-control" formControlName="lname" >
+        </div>
+        <div class="mb-3">
+            <label for="username" class="form-label">User Name</label>
+            <input type="text" class="form-control" formControlName="username" >
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" formControlName="email">
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" formControlName="password">
+        </div>
+
+        <button type="submit" class="btn btn-primary" *ngIf="!id" (click)="postUsers()">Sign up</button>
+        <button type="submit" class="btn btn-primary" *ngIf="id" (click)="putUsers()">Update Profile</button>
+
+    </form>
+    <a routerLink="/log-in">already Member ? Click to Login !</a>
+</div>
+<hr>
